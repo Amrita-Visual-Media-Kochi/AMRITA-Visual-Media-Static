@@ -82,6 +82,7 @@ export default function Home() {
             <div className="big-text-bg">AVM</div>
           </div>
         </section>
+      </main>
     </div>
   );
 }
