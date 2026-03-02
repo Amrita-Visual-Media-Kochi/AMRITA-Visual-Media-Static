@@ -60,10 +60,7 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="hero-content">
-          <div className="coming-badge">
-            <span className="icon">✨</span>
-            Something amazing is brewing
-          </div>
+
 
           <h1 className="hero-title">
             Coming Soon
