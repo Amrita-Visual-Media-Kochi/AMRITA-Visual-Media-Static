@@ -66,7 +66,7 @@ export default function Home() {
           </div>
 
           <h1 className="hero-title">
-            <span className="gradient-text">Coming Soon</span>
+            Coming Soon
           </h1>
 
           <p className="hero-subtitle">
@@ -75,13 +75,33 @@ export default function Home() {
             will redefine creativity.
           </p>
 
-        </div>
-        {/* ===== Bottom Band ===== */}
-        <section className="bottom-band" aria-hidden="true">
-          <div className="bottom-band-inner">
-            <div className="big-text-bg">AVM</div>
+          <div className="current-events">
+            <h2 className="events-heading">Current Events</h2>
+            <div className="events-grid">
+              <a
+                href="https://adc.vmamritakochi.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="event-card"
+              >
+                <div className="event-content">
+                  <span className="event-label">Active</span>
+                  <h3 className="event-title">Amrita Design Conclave</h3>
+                  <p className="event-description">Joining forces to redefine the future of design and technology.</p>
+                  <div className="event-cta">
+                    Explore Event
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-        </section>
+
+        </div>
+
       </main>
     </div>
   );
