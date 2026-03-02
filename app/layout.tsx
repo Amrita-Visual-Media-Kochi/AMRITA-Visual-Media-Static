@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Amrita Vishwa Vidyapeetham",
     "Coming Soon",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
