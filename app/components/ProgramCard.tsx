@@ -10,6 +10,7 @@ export default function ProgramCard({
     size,
     href,
     priority = false,
+    imageClass,
 }: {
     imgSrc?: string;
     imageClass?: string; /* keeping for backwards compat */
