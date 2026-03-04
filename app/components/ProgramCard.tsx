@@ -9,6 +9,7 @@ export default function ProgramCard({
     description,
     size,
     href,
+    priority = false,
 }: {
     imgSrc?: string;
     imageClass?: string; /* keeping for backwards compat */
@@ -18,6 +19,7 @@ export default function ProgramCard({
     description: string;
     size?: "large";
     href?: string;
+    priority?: boolean;
 }) {
     const cardContent = (
         <>
@@ -27,6 +29,8 @@ export default function ProgramCard({
                         src={imgSrc}
                         alt={title}
                         fill
+                        priority={priority}
+                        sizes={size === "large" ? "(max-width: 768px) 100vw, 460px" : "(max-width: 768px) 100vw, 380px"}
                         style={{ objectFit: 'cover', borderRadius: 'inherit' }}
                     />
                 )}

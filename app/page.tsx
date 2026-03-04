@@ -37,6 +37,7 @@ export default function Home() {
               href="https://adc.vmamritakochi.in/"
               size="large"
               imgSrc="/header/adc.png"
+              priority={true}
               badgeType="active"
               badgeText="Active"
               title="Amrita design conclave"
@@ -45,6 +46,7 @@ export default function Home() {
             <ProgramCard
               href="/ismer"
               imgSrc="/header/ismer.jpg"
+              priority={true}
               badgeType="coming-soon"
               badgeText="Coming soon"
               title="ISMER"

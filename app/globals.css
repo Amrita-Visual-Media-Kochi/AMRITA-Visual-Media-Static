@@ -468,17 +468,15 @@ img {
 .ismer-header {
   display: flex;
   align-items: center;
-  max-width: 1400px;
+  justify-content: space-between;
+  max-width: 1000px;
   margin: 0 auto 4rem;
-  gap: 2rem;
 }
 
 .ismer-header h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0 auto;
-  transform: translateX(-32px);
-  /* center offset */
+  margin: 0;
 }
 
 .ismer-content-section,
@@ -493,7 +491,8 @@ img {
   height: 500px;
   border-radius: 20px;
   margin-bottom: 3rem;
-  background-color: #333;
+  position: relative;
+  overflow: hidden;
 }
 
 .ismer-text-content {
@@ -511,7 +510,8 @@ img {
   width: 100%;
   height: 600px;
   border-radius: 20px;
-  background-color: #444;
+  position: relative;
+  overflow: hidden;
 }
 
 .ismer-why-section h2 {
@@ -529,23 +529,44 @@ img {
   overflow: hidden;
 }
 
-.horizontal-gallery {
+.marquee {
   display: flex;
+  overflow: hidden;
+  user-select: none;
   gap: 1.5rem;
-  padding: 0 5vw;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
 
-.horizontal-gallery::-webkit-scrollbar {
-  display: none;
+.marquee-group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  min-width: 100%;
+  animation: scrollMarquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-group {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-100% - 1.5rem), 0, 0);
+  }
 }
 
 .gallery-item {
   width: 380px;
   flex-shrink: 0;
   border-radius: 12px;
-  background-color: #555;
+  position: relative;
+  overflow: hidden;
 }
 
 .other-programs-section {
