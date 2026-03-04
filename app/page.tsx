@@ -1,105 +1,137 @@
 import Image from "next/image";
+import Footer from "./components/Footer";
+import ProgramCard from "./components/ProgramCard";
 
 export default function Home() {
+  const masonryHeights = [
+    240, 240, 240, 320, 160, 240, 240, 240, 240, 240, 160, 320
+  ];
+
   return (
-    <div className="page">
+    <div className="page-container">
       {/* ===== Header ===== */}
-      <header className="header" id="header">
-        <div className="logo-container">
-          <Image
-            src="/asas_logo.png"
-            alt="Amrita Visual Media Logo"
-            width={160}
-            height={40}
-            className="logo-image"
-            priority
-          />
-          <div className="logo-text">
-            Amrita Visual Media
-            <span>Kochi Campus</span>
-          </div>
-        </div>
+      <header className="site-header">
+        <Image
+          src="/asas_logo.png"
+          alt="Amrita Logo"
+          width={120}
+          height={40}
+          className="header-logo"
+        />
       </header>
 
       {/* ===== Hero Section ===== */}
-      <main className="hero" id="hero">
-        {/* Floating decorative shapes */}
-        <div className="floating-shapes" aria-hidden="true">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-          <div className="shape shape-4"></div>
-          <div className="shape shape-5"></div>
+      <section className="hero-section">
+        <h1 className="hero-title">
+          Department <span className="italic-purple">of</span>
+          <br />
+          Visual Media
+        </h1>
+        <p className="hero-subtitle">
+          Exploring storytelling, design, media, and visual culture through academic practice and industry engagement.
+        </p>
+
+        <div className="hero-cards-wrapper">
+          <div className="hero-cards">
+            <ProgramCard
+              href="https://adc.vmamritakochi.in/"
+              size="large"
+              imgSrc="/header/adc.png"
+              badgeType="active"
+              badgeText="Active"
+              title="Amrita design conclave"
+              description="Exploring storytelling, design, media, and visual culture through academic practice and industry engagement."
+            />
+            <ProgramCard
+              href="/ismer"
+              imgSrc="/header/ismer.jpg"
+              badgeType="coming-soon"
+              badgeText="Coming soon"
+              title="ISMER"
+              description="Exploring storytelling, design, media, and visual culture through academic practice and industry engagement."
+            />
+          </div>
         </div>
+      </section>
 
-        {/* Decorative grid background */}
-        <div className="decorative-grid" aria-hidden="true">
-          <svg
-            viewBox="0 0 800 800"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <pattern
-                id="grid"
-                width="40"
-                height="40"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 40 0 L 0 0 0 40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                />
-              </pattern>
-            </defs>
-            <rect width="800" height="800" fill="url(#grid)" />
-          </svg>
-        </div>
+      {/* ===== White Canvas Wrapper ===== */}
+      <div className="white-canvas">
+        {/* ===== Glimpses Section ===== */}
+        <section className="glimpses-section">
+          <h2 className="section-title">Glimpses of Past Events</h2>
+          <div className="masonry-grid">
+            {masonryHeights.map((h, i) => (
+              <div
+                key={i}
+                className="masonry-item placeholder-image"
+                style={{ height: `${h}px` }}
+              ></div>
+            ))}
+          </div>
+        </section>
 
-        {/* Hero Content */}
-        <div className="hero-content">
-
-
-          <h1 className="hero-title">
-            Coming Soon
-          </h1>
-
-          <p className="hero-subtitle">
-            We&apos;re crafting a brand new digital experience for Amrita Visual
-            Media, Kochi Campus. Stay tuned for something extraordinary that
-            will redefine creativity.
-          </p>
-
-          <div className="current-events">
-            <h2 className="events-heading">Current Events</h2>
-            <div className="events-grid">
-              <a
-                href="https://adc.vmamritakochi.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="event-card"
-              >
-                <div className="event-content">
-                  <span className="event-label">Active</span>
-                  <h3 className="event-title">Amrita Design Conclave</h3>
-                  <p className="event-description">Joining forces to redefine the future of design and technology.</p>
-                  <div className="event-cta">
-                    Explore Event
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              </a>
+        {/* ===== About Section ===== */}
+        <section className="about-section">
+          <div className="about-content">
+            <h2>At Amrita Vishwa Vidyapeetham,<br />Kochi</h2>
+            <p>
+              The design conclave will be hosted at the Amrita School of Arts and
+              Sciences, Kochi. The campus offers a professional academic
+              setting equipped with seminar halls, presentation infrastructure,
+              and focused discussion spaces ideal for keynotes, panels, and
+              interactive sessions.
+            </p>
+            <button className="btn-primary black-btn">Get Directions</button>
+          </div>
+          <div className="about-image-wrapper">
+            <div className="about-image">
+              <Image src="/amrita-campus.jpg" alt="Amrita Campus" width={800} height={500} className="object-cover w-full h-full rounded-xl" />
             </div>
           </div>
+        </section>
 
-        </div>
+        {/* ===== Blogs Section ===== */}
+        <section className="blogs-section">
+          <h2 className="section-title">Blogs & Headlines</h2>
+          <div className="blogs-grid">
+            <div className="blog-card">
+              <div className="blog-image">
+                <Image src="/blogs/1.png" alt="Blog 1" width={400} height={320} className="object-cover w-full h-full" />
+              </div>
+              <div className="blog-content">
+                <p>Lorem ipsum dolor sit amet,<br />consectetur</p>
+              </div>
+            </div>
+            <div className="blog-card">
+              <div className="blog-image">
+                <Image src="/blogs/2.jpg" alt="Blog 2" width={400} height={320} className="object-cover w-full h-full" />
+              </div>
+              <div className="blog-content">
+                <p>Lorem ipsum dolor sit amet,<br />consectetur</p>
+              </div>
+            </div>
+            <div className="blog-card">
+              <div className="blog-image">
+                <Image src="/blogs/3.png" alt="Blog 3" width={400} height={320} className="object-cover w-full h-full" />
+              </div>
+              <div className="blog-content">
+                <p>Lorem ipsum dolor sit amet,<br />consectetur</p>
+              </div>
+            </div>
+            <div className="blog-card">
+              <div className="blog-image">
+                <Image src="/blogs/4.png" alt="Blog 4" width={400} height={320} className="object-cover w-full h-full" />
+              </div>
+              <div className="blog-content">
+                <p>Lorem ipsum dolor sit amet,<br />consectetur</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-      </main>
+      {/* ===== Footer ===== */}
+      <Footer />
     </div>
   );
 }
